@@ -42,14 +42,24 @@ Que alterações deverá fazer ao Dockerfile?
 Para iniciar o container, corra:
 
 ```bash
-docker run hello-world-app
+docker run -p 8080:8080 hello-world-app
+```
+
+Pode também dar um nome ao container:
+```bash
+docker run -d -p 8080:8080 --name hello-world-app hello-world-app:1.0
 ```
 
 Pode também iniciar o container em modo iterativo, para ter acesso à linha de comandos, por exemplo.
 Para tal, deverá correr:
 
 ```bash
-docker run -it hello-world-app
+docker run -p 8080:8080 -it hello-world-app
+```
+
+Para verificar a aplicação a funcionar:
+```bash
+http://localhost:8080
 ```
 
 Para ver os containers ativos, corra:
@@ -78,7 +88,7 @@ Para pôr em prática o uso de volumes, deve escrever um ficheiro `Logger.java` 
 - Crie um ficheiro chamado `/logs/log.txt`, onde escreve o nome do utilizador;
 - Caso o ficheiro já exista, leia o conteúdo do ficheiro, imprima-o na consola e substitua-o no ficheiro pelo nome do utilizador.
 
-Depois, deve voltar a escrever um `Dockerfile` que compile e corra o programa `Logger.java` e, em seguida, construir o container.  
+Depois, deve voltar a escrever um `Dockerfile` que compile e corra o programa `Logger.java` e, em seguida, **construir o container**.  
 Crie um volume e inspecione-o:
 
 ```bash
