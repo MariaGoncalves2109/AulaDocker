@@ -47,7 +47,7 @@ docker run -p 8080:8080 hello-world-app
 
 Pode também dar um nome ao container:
 ```bash
-docker run -d -p 8080:8080 --name hello-world-app hello-world-app:1.0
+docker run -d -p 8080:8080 --name hello-world-app hello-world-app
 ```
 
 Pode também iniciar o container em modo iterativo, para ter acesso à linha de comandos, por exemplo.
