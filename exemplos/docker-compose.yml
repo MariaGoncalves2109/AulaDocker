@@ -9,7 +9,8 @@ services:
       - 5432
     ports:
       - 5432:5432
-    # se já usar porta no postgres, deixar diff 5433:5432
+    # Se a porta 5432 já estiver ocupada:
+    # - 5433:5432
     networks:
       - dbnet
     environment:
@@ -20,7 +21,7 @@ services:
 
   # APP*****************************************
   springbootapp:
-    image: myapp:latest
+    image: hello-world-app:latest
     build:
       context: .
     container_name: java_app
